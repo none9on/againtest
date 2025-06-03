@@ -1,0 +1,40 @@
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: auto;
+        grid-template-rows: 5% auto;
+        grid-template-areas:
+            "header"
+            "main";
+    }
+
+    aside {
+        display: none;
+    }
+
+    main {
+        grid-area: main;
+        margin:5px 10px;
+        height: 100%;
+    }
+
+    .task_manager{
+        margin:0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 150px auto auto; 
+        grid-template-rows: 57px auto auto;
+        grid-template-areas:
+            "header header header"
+            "side-bar main main"
+            "side-bar main main";
+    }
+
+    aside {
+        display: block; 
+    }
+
+}

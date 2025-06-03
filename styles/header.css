@@ -1,0 +1,43 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+    background: #1D1B20;
+    grid-area: header;
+}
+
+.header__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: transparent;
+}
+
+.header__logo{
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.header__logo-image{
+    height: 10px;
+    background-color: transparent;
+}
+
+.header__name-text{
+    background-color: transparent;
+}
+
+.header__name{
+    color:white;
+    font-family: "Montserrat", sans-serif;
+    background-color: transparent;
+}
+
+.header__icon{
+    background-color: transparent;
+}
+.header__icon-image{
+    background-color: transparent;
+}

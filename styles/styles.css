@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    font-family: "Inter", sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 90px auto 30%;
+    grid-template-rows: 37px 1fr;
+    grid-template-areas:
+        "header header header"
+        "side-bar main right";
+        gap: 10px; /* это вместо margin */
+    padding: 10px; /* небольшие внутренние отступы */
+}
+
+.side_bar, .task_manager {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.side_bar,
+.task_manager,
+.right_greeting,
+.right_calendar {
+    margin: 0;
+}
+
+aside{
+    grid-area: side-bar;
+    
+}
+
+.side_bar{
+    background: #1D1B20;
+    border-radius: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.side_bar-img{
+    background: transparent;
+    margin: 10px;
+}
+
+main{
+    grid-area: main;
+}
+
+.task_manager{
+    background: #92a4fc;
+    background: linear-gradient(90deg, rgba(146, 164, 252, 1) 16%, rgba(248, 255, 112, 1) 100%);
+    border-radius: 20px;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: auto;
+        grid-template-rows: 5% auto auto;
+        grid-template-areas:
+            "header"
+        "greeting"
+            "main";
+    }
+
+    aside, .right_calendar {
+        display: none;
+    }
+
+    main {
+        grid-area: main;
+        margin:5px 10px;
+        height: 100%;
+    }
+
+    .right_greeting {
+        grid-area: greeting;
+        margin:5px 10px;}
+
+    .task_manager{
+        margin:0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 150px auto auto; /* aside | main | main */
+        grid-template-rows: 57px auto auto;
+        grid-template-areas:
+            "header header header"
+            "side-bar main main"
+            "side-bar main main";
+    }
+
+    aside {
+        display: block; /* Показываем aside обратно */
+    }
+
+    .right_greeting, .right_calendar {
+        display: none; /* Прячем greeting+calendar, если не нужны */
+    }
+}
